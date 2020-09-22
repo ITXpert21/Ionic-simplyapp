@@ -8,7 +8,6 @@ export const firebaseconfig = {
       storageBucket: "storageBucket",
       messagingSenderId: "messagingSenderId",
       appId: "appId"
-
       }
 
 };
