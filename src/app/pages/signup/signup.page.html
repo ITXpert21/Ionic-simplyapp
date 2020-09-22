@@ -1,0 +1,82 @@
+
+<ion-content fixed>
+  
+  <ion-grid fixed>
+    <!-- <ion-row style="height: 40px;" class="ion-justify-content-center ion-align-items-end">
+      <ion-toolbar mode="ios" style="--background : transparent;">
+        <ion-title class="ion-text-capitalize">
+          
+        </ion-title>
+        <ion-buttons slot="start">
+          <ion-button mode="md" (click)="goClosePage()" slot="start" style="--color : white;">
+            <ion-icon name="chevron-back-outline" color="white"></ion-icon>
+          </ion-button>
+        </ion-buttons> 
+      </ion-toolbar>
+    </ion-row> -->
+    <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+      <ion-col size="12" class="ion-text-center">
+          <span style="font-size: 44pt; color:white;"><strong>{{strings.ST1}}</strong></span>
+      </ion-col>
+    </ion-row>    
+    <ion-row class="ion-justify-content-center ion-align-items-start" [ngStyle]="{'height': rowBodyHeight}">
+      <ion-col size="10" class="ion-text-center">
+        <p style="color: white; font-size: 16pt;">{{strings.ST5}}</p>
+        <form class="form" [formGroup]="validationsform" (ngSubmit)="tryRegister(validationsform.value)">
+          
+          <ion-list class="line-input" mode="md"> 
+            <ion-item mode="md">
+            <ion-icon name="person-outline" size="small" slot="start"></ion-icon>
+            <ion-input class="ion-text-left" placeholder="First Name" type="text" formControlName="first_name"></ion-input>
+            </ion-item> 
+          </ion-list>
+          <ion-list class="line-input" mode="md"> 
+            <ion-item mode="md">
+            <ion-icon name="person-outline" size="small" slot="start"></ion-icon>
+            <ion-input class="ion-text-left" placeholder="Last Name" type="text" formControlName="last_name"></ion-input>
+            </ion-item> 
+          </ion-list>
+          <ion-list class="line-input" mode="md"> 
+            <ion-item mode="md">
+            <ion-icon name="call-outline" size="small" slot="start"></ion-icon>
+            <ion-input class="ion-text-left" placeholder="Phone number" type="number" formControlName="phonenumber"></ion-input>
+            </ion-item> 
+          </ion-list>          
+          <ion-list class="line-input" mode="md"> 
+            <ion-item mode="md">
+              <ion-icon name="mail-outline" size="small" slot="start"></ion-icon>
+            <ion-input class="ion-text-left" placeholder="Email" type="text" formControlName="email"></ion-input>
+            </ion-item> 
+          </ion-list>
+
+          <ion-list class="line-input" mode="md"> 
+            <ion-item mode="md"> 
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-input class="ion-text-left" type="password" placeholder="Password" formControlName="password"></ion-input>
+            </ion-item> 
+          </ion-list>
+          <ion-list class="line-input" mode="md"> 
+            <ion-item mode="md">
+              <ion-icon name="calendar-outline" size="small" slot="start"></ion-icon>
+              <ion-datetime class="ion-text-left" placeholder="birthday" type="text" formControlName="birthday"></ion-datetime>
+            </ion-item> 
+          </ion-list>  
+          <app-loading *ngIf="isLoading"></app-loading>
+
+          <ion-button class="button-h" mode="ios" type="submit" [disabled]="!validationsform.valid" fill="solid" size="default" shape="round" expand="block">
+          {{strings.ST5}}
+          </ion-button>
+        </form>
+
+        <p class="go-to-terms">
+          <a [routerLink]="['/termsguest']">{{strings.ST82}}</a>
+        </p>
+        <p class="go-to-terms">
+          {{strings.ST10}} <a [routerLink]="['/login']"><strong>{{strings.ST8}}</strong></a>
+        </p>        
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+
+</ion-content>

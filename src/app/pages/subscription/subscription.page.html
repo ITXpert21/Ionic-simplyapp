@@ -1,0 +1,64 @@
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+      <ion-col size="12">
+        <ion-toolbar mode="ios" style="--background : transparent;">
+          <!-- <ion-title class="ion-text-capitalize"> -->
+          <ion-title style="color: white;">  
+            {{strings.ST15}}
+          </ion-title>
+          <ion-buttons slot="start">
+            <ion-button mode="md" (click)="goClosePage()" slot="start" style="--color : white">
+              <ion-icon name="chevron-back-outline" color="white"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <p class="header_description">{{strings.ST16}}</p>
+        <p class="header_description">{{strings.ST17}}</p>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}" (click)="gotoTips()">
+      <ion-col size="11" class="ion-text-center">
+        <ion-card [ngStyle]="{'height': rowHeight}">
+          <ion-item lines="none" text-center>
+            <ion-label>
+              <p class="card_headertext">{{strings.ST18}}</p>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" class="arrow-icon"></ion-icon>
+          </ion-item>
+        
+          <ion-card-content>
+              <p class="card_headertext"><span>$</span><span style="font-size: 42pt; font-weight: bold;">0</span></p>
+              <div style="width: 100%; text-align: left;">
+              <p class="card_contenttext">{{strings.ST19}}</p>
+              <p class="card_contenttext">{{strings.ST20}}</p>
+              </div>
+          </ion-card-content>
+        </ion-card>
+     </ion-col>
+    </ion-row> -->
+    <ion-row class="ion-justify-content-center ion-align-items-center" style="margin-top: 20px;" [ngStyle]="{'height': rowHeight}" (click)="gotoCheckout()">
+      <ion-col size="11" class="ion-text-center">
+        <ion-card [ngStyle]="{'height': rowHeight}">
+          <ion-item lines="none" text-center>
+            <ion-label>
+              <p class="card_headertext">{{strings.ST21}}</p>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" class="arrow-icon"></ion-icon>
+          </ion-item>
+        
+          <ion-card-content style="padding-top: 0px;">
+              <p class="card_headertext"><span>$</span><span style="font-size: 42pt; font-weight: bold;">4.99</span></p>
+              <div style="width: 100%; text-align: left;">
+              <p class="card_contenttext">{{strings.ST19}}</p>
+              <p class="card_contenttext">{{strings.ST20}}</p>
+              <p class="card_contenttext">{{strings.ST20}}</p>
+              </div>
+          </ion-card-content>
+        </ion-card>
+     </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

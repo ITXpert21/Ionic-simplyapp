@@ -1,0 +1,82 @@
+
+<ion-content>
+  <ion-grid>
+    <ion-row style="height: 40px;" class="ion-justify-content-start ion-align-items-center">
+      <ion-col size="12">
+        <ion-toolbar mode="ios" style="--background : transparent; height: 30px;">
+          <ion-buttons slot="end">
+            <ion-button mode="md" (click)="gotoProfile()" slot="start" style="--color : white">
+              <ion-icon name="person" color="white"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-col>              
+    </ion-row>
+    </ion-grid>  
+  <ion-slides pager="true" [options]="slideOpts" mode="ios"  #tipSlider (ionSlideWillChange)="slideChanged()">
+    
+    <ion-slide *ngFor="let item of tips">
+      <ion-grid text-center>
+        <ion-row style="height: 70px;" class="ion-justify-content-center ion-align-items-end">
+          <ion-col size="12">
+            <ion-toolbar mode="ios" style="--background : transparent;">
+              <ion-title style="color: white;">  
+                {{item.title_date | date: "yyyy/MM/dd "}}
+              </ion-title>
+              <!-- <ion-buttons slot="start">
+                <ion-button mode="md" (click)="goClosePage()" slot="start" style="--color : white">
+                  <ion-icon name="chevron-back-outline" color="white"></ion-icon>
+                </ion-button>
+              </ion-buttons> -->
+              <ion-buttons slot="end">
+                <ion-button mode="md"  slot="start" style="--color : white; font-size: 24px;">
+                  <div *ngIf="item.favorite">
+                    <ion-icon name="heart" color="white" (click)="setFavorite(item)"></ion-icon>
+                  </div>
+                  <div *ngIf="item.favorite == NULL">
+                    <ion-icon name="heart-outline" color="white" (click)="setFavorite(item)"></ion-icon>
+                  </div>                  
+                </ion-button>
+                
+              </ion-buttons>              
+            </ion-toolbar>
+          </ion-col>              
+        </ion-row>
+        <ion-row class="ion-justify-content-center ion-align-items-start" >
+          <ion-col size="10" class="ion-text-center">
+            <div *ngIf="item.tip_image != ''" class="card-center-image" [style.background-image]="'url(' + (item.tip_image | image) + ')'" style="margin-top: 10px;">
+              <div class="card-center-bg">
+              </div>
+            </div>    
+            <div *ngIf="item.tip_video != ''" style="margin-top: 10px;">
+              <div *ngIf="item.tip_videothumbimage != ''" class="card-center-image" [style.background-image]="'url(' + (item.tip_videothumbimage | image) + ')'">
+                <div class="card-center-bg">
+                  <div class="card-center-text">
+
+                  </div>
+                </div>
+              </div>  
+              <div *ngIf="item.tip_videothumbimage == ''" class="card-center-image">
+                <div class="card-center-bg" style="background-color: black;">
+                  <div class="card-center-text">
+                    <ion-icon name="caret-forward-outline" style="font-size: 54px;"></ion-icon>
+                  </div>
+                </div>
+              </div>  
+            </div>                   
+            <app-html [htmlcontent]="item.tip_text" class="ion-text-left"></app-html>
+          </ion-col>              
+        </ion-row>        
+
+      </ion-grid>
+
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
+<!-- <ion-footer class="footer">
+  <ion-button class="button-h" mode="ios" type="submit" fill="solid" size="default" shape="round" expand="block" (click)="gotoProfile()">
+    {{strings.ST42}}
+  </ion-button>
+</ion-footer> -->

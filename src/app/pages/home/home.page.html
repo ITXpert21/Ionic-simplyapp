@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-grid class="header-bg">
+
+    <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+      <ion-col size="12" class="ion-text-center">
+        <ion-icon name="caret-forward-outline" style="color : white; font-size:84px;" (click)="playVideo();"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center" >
+      <ion-col size="10" class="ion-text-center">
+        <p style="font-size: 18pt; color: white;"><strong>{{strings.ST11}}</strong></p>
+        <p style="font-size: 12pt; color: white;">{{strings.ST12}}</p>
+        <ion-button class="button-h" mode="ios" fill="solid" size="default" shape="round" expand="block" (click)="getStarted();">
+          {{strings.ST13}}
+        </ion-button>
+        <!-- <a [routerLink]="['/tips']"><p style="font-size: 14pt; color: white;"><strong>{{strings.ST14}}</strong></p></a> -->
+      </ion-col>
+    </ion-row>    
+  </ion-grid>
+</ion-content>
+  

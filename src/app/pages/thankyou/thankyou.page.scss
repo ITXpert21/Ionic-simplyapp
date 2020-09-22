@@ -1,0 +1,21 @@
+ion-content{
+    --background: #9cd1e8;
+}
+.success_text{
+    font-size: 18pt;
+    color: white;
+    font-weight: bold;
+}
+.success_description{
+    font-size: 12pt;
+    color: white;
+}
+.button-h{
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold !important;
+    margin-top: 50px !important;
+    //text-transform: uppercase !important;
+    --background: white;
+    color: #9cd1e8;
+}

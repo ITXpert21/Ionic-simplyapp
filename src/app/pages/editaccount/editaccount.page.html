@@ -1,0 +1,81 @@
+<ion-content>
+  <ion-grid text-center>
+    <ion-row style="height: 70px;" class="ion-justify-content-center ion-align-items-end">
+      <ion-col size="12">
+        <ion-toolbar mode="ios" style="--background : transparent;">
+          <!-- <ion-title class="ion-text-capitalize"> -->
+          <ion-title style="color: white;">  
+            {{strings.ST59}}
+          </ion-title>
+          <ion-buttons slot="start">
+            <ion-button mode="md" (click)="goClosePage()" slot="start" style="--color : white">
+              <ion-icon name="chevron-back-outline" color="white"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-col>              
+    </ion-row>  
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="11" class="ion-text-center col_header" >
+        <div class="header_name">
+          {{profile_name}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="11" class="ion-text-center col_header" >
+        <ion-list class="line-input" mode="md"> 
+          <ion-item mode="md">
+          <ion-icon name="person-outline" size="small" slot="start"></ion-icon>
+          <ion-input class="ion-text-left" type="text" [(ngModel)]="first_name"></ion-input>
+          </ion-item> 
+        </ion-list>
+        <ion-list class="line-input" mode="md"> 
+          <ion-item mode="md">
+          <ion-icon name="person-outline" size="small" slot="start"></ion-icon>
+          <ion-input class="ion-text-left" type="text" [(ngModel)]="last_name"></ion-input>
+          </ion-item> 
+        </ion-list>
+        <ion-list class="line-input" mode="md"> 
+          <ion-item mode="md">
+          <ion-icon name="mail-outline" size="small" slot="start"></ion-icon>
+          <ion-input class="ion-text-left" [(ngModel)]="email" type="text" ></ion-input>
+          </ion-item> 
+        </ion-list>
+        <ion-list class="line-input" mode="md"> 
+          <ion-item mode="md"> 
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-input class="ion-text-left" type="password" placeholder="Password" [(ngModel)]="newpassword"></ion-input>
+          </ion-item> 
+        </ion-list>
+        <ion-list class="line-input" mode="md"> 
+          <ion-item mode="md"> 
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-input class="ion-text-left" type="password" placeholder="Confrim Password" [(ngModel)]="confirmpassword"></ion-input>
+          </ion-item> 
+        </ion-list>     
+        <ion-list class="line-input" mode="md"> 
+          <ion-item mode="md">
+            <ion-icon name="calendar-outline" size="small" slot="start"></ion-icon>
+            <ion-datetime class="ion-text-left" placeholder="birthday mm/dd/yyyy" type="text" [(ngModel)]="birthday"></ion-datetime>
+          </ion-item> 
+        </ion-list>             
+      </ion-col>
+    </ion-row>   
+    <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 70px;">
+      <ion-col size="12"  class="ion-text-center" >
+        <div style="color: white; font-size: x-large; font-weight: bold;">what are you here for?</div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="option-row">
+      <ion-col *ngFor="let item of options" size="4" >
+        <div *ngIf="item.value == 1" class="option_active" (click)="selectOption(item)">{{item.name}}</div>    
+        <div *ngIf="item.value == null" class="option" (click)="selectOption(item)">{{item.name}}</div>   
+      </ion-col>
+    </ion-row> 
+  </ion-grid>  
+  <app-loading *ngIf="isLoading"></app-loading>
+  <ion-button class="button-h" mode="ios" type="button" fill="solid" size="default" shape="round" expand="block" (click)="updateAccount()">
+    {{strings.ST60}}
+  </ion-button>  
+</ion-content>

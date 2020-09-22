@@ -1,0 +1,34 @@
+
+<ion-content>
+<ion-grid fixed>
+  <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+    <ion-col size="12" class="ion-text-center">
+        <span style="font-size: 44pt; color:white;"><strong>{{strings.ST1}}</strong></span>
+    </ion-col>
+  </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+      <ion-col size="10" class="ion-text-center">
+        <p style="color: white; font-size: 16pt;">{{strings.ST29}}</p>
+        <p style="color: white; font-size: 12pt;">{{strings.ST7}}</p>
+        <form class="form" autocomplete="off" [formGroup]="validationsform" (ngSubmit)="tryRestPass(validationsform.value)">
+            <ion-list class="line-input" mode="md"> 
+                <ion-item mode="md">
+                    <ion-icon name="mail-outline" size="small" slot="start"></ion-icon>
+              <ion-input class="ion-text-left" placeholder="Email" type="email" formControlName="email"></ion-input>
+                </ion-item> 
+              </ion-list>
+            <ion-button class="button-h" mode="ios" type="submit" [disabled]="!validationsform.valid" fill="solid" size="default" shape="round" expand="block">
+              {{strings.ST9}}
+            </ion-button>
+          </form>
+
+          <p class="go-to-restpass">
+              <a [routerLink]="['/login']">{{strings.ST35}}</a>
+            </p>
+  
+      </ion-col>
+    </ion-row>
+  
+  </ion-grid>
+
+</ion-content>

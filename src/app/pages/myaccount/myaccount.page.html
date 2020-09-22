@@ -1,0 +1,72 @@
+<ion-content>
+  <ion-grid text-center>
+    <ion-row style="height: 70px;" class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12">
+        <ion-toolbar mode="ios" style="--background : transparent;">
+          <!-- <ion-title class="ion-text-capitalize"> -->
+          <ion-title style="color: white;">  
+            {{strings.ST44}}
+          </ion-title>
+          <ion-buttons slot="start">
+            <ion-button mode="md" (click)="goClosePage()" slot="start" style="--color : white">
+              <ion-icon name="chevron-back-outline" color="white"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-col>              
+    </ion-row>  
+    <ion-row class="ion-justify-content-center ion-align-items-end">
+      <ion-col size="11" class="ion-text-center col_header" >
+        <div class="header_name">
+          {{profile_name}}
+        </div>
+        <p class="header_text" style="font-size: larger;"><strong>{{full_name}}</strong></p>
+        <p class="header_text">{{email}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-start" >
+      <ion-col size="11" class="ion-text-center col_header" >
+        <p class="header_text">{{strings.ST53}}</p>
+        <ion-icon name="close-circle-outline" style="color:white; font-size:28px;" (click)="gotoTips()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="11" class="col_header">
+        <p class="header_text">{{strings.ST54}}</p>
+        <ion-list class="line-input" mode="md"> 
+          <ion-item mode="md" >
+            <ion-label>{{notificaton_timetext}}</ion-label>
+            <ion-icon name="create-outline" style="font-size: 24px; color: white;" (click)="presentAlertPrompt()"></ion-icon>
+            <ion-toggle slot="end" name="apple" color="primary" (ionChange)="updateToggle($event)" checked={{notification_toggle}}></ion-toggle>
+          </ion-item> 
+        </ion-list>
+    </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="11">
+        <p class="header_text">favorite tips</p>
+        <ion-slides pager="false" [options]="slideOpts" >
+          <ion-slide *ngFor="let item of tips">
+            <ion-card  class="savedtips">
+              <ion-item lines="none">
+                <ion-label>{{item.tip_title}}</ion-label>
+                <ion-icon name="heart"></ion-icon>
+              </ion-item>
+            
+              <ion-card-content style="color: white; padding-top: 0px; ">
+                <app-quotehtml [htmlcontent]="item.tip_text" class="ion-text-left"></app-quotehtml>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+  <ion-button class="button-h" mode="ios" type="submit" fill="solid" size="default" shape="round" expand="block" (click)="logout()">
+    {{strings.ST58}}
+  </ion-button>
+  <ion-button class="button-h" mode="ios" type="submit" fill="solid" size="default" shape="round" expand="block" (click)="gotoPersonalInfo()">
+    {{strings.ST57}}
+  </ion-button>
+
+</ion-content>

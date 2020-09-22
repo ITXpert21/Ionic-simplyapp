@@ -1,0 +1,7 @@
+{
+  "name": "vxpower",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

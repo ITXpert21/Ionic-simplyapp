@@ -1,0 +1,36 @@
+<ion-content>
+    <app-loading *ngIf="isLoading"></app-loading>
+  
+    <ion-grid text-center>
+      <ion-row style="height: 70px;" class="ion-justify-content-center ion-align-items-end">
+        <ion-col size="12">
+          <ion-toolbar mode="ios" style="--background : transparent;">
+            <!-- <ion-title class="ion-text-capitalize"> -->
+            <ion-title style="color: white;">  
+              {{strings.ST39}}
+            </ion-title>
+            <ion-buttons slot="start">
+              <ion-button mode="md" (click)="goClosePage()" slot="start" style="--color : white">
+                <ion-icon name="chevron-back-outline" color="white"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-col>              
+      </ion-row>
+      <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+        <ion-col size="12" class="ion-text-center">
+            <ion-icon name="checkmark-circle-outline" style="font-size: 200px; color: white;"></ion-icon>
+        </ion-col>              
+      </ion-row>
+      <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+        <ion-col size="10" class="ion-text-center">
+            <p class="success_text">{{strings.ST40}}</p>
+            <p class="success_description">{{strings.ST41}}</p>
+            <ion-button class="button-h" mode="ios" fill="solid" size="default" shape="round" expand="block" (click)="goTips()">
+                {{strings.ST13}}
+            </ion-button>            
+        </ion-col>              
+      </ion-row>
+   
+    </ion-grid>
+  </ion-content>

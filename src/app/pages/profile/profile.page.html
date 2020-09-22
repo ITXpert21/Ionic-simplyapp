@@ -1,0 +1,24 @@
+<ion-content>
+  <ion-grid text-center>
+    <ion-row class="ion-justify-content-center ion-align-items-end" [ngStyle]="{'height': rowHeight}">
+      <ion-col size="12" class="ion-text-center" >
+        <div class="header_name">
+          {{profile_name}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-start" [ngStyle]="{'height': rowHeight2}">
+      <ion-col size="11" class="ion-text-center" >
+        <a [routerLink]="['/tips']" ><p>{{strings.ST43}}</p></a>
+        <a [routerLink]="['/myaccount']"><p>{{strings.ST44}}</p></a>
+        <!-- <a [routerLink]="['/subscription']"><p>{{strings.ST45}}</p></a> -->
+        <a (click)="openPartnerAndFaq('http://simply.betaplanets.com/inquiry')"><p>{{strings.ST46}}</p></a>     
+        <a (click)="openPartnerAndFaq('http://simply.betaplanets.com/faq')"><p>{{strings.ST47}}</p></a>
+        <a><p>{{strings.ST48}}</p></a>
+        <a><p>{{strings.ST49}}</p></a>
+        <a (click)="logout()"><p>{{strings.ST50}}</p></a>   
+        <ion-icon name="close-circle-outline" style="color:white; font-size:48px;" (click)="gotoTips()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>    
+</ion-content>

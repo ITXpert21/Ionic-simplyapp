@@ -1,0 +1,47 @@
+
+<ion-content fixed >
+
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+      <ion-col size="12" class="ion-text-center">
+          <span style="font-size: 44pt; color:white;"><strong>{{strings.ST1}}</strong></span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+      <ion-col size="10" class="ion-text-center">
+        <!-- <img src="./assets/images/logo.jpg" class="start-logo"/> -->
+        <p style="color: white; font-size: 16pt;">{{strings.ST3}}</p>
+        <form class="form" autocomplete="off" [formGroup]="validationsform" (ngSubmit)="tryLogin(validationsform.value)">
+            <ion-list class="line-input" mode="md"> 
+              <ion-item mode="md" >
+                <ion-icon name="mail-outline" size="small" slot="start"></ion-icon>
+                <ion-input class="ion-text-left" placeholder="Email" type="email" formControlName="email"></ion-input>
+              </ion-item> 
+              </ion-list>
+              <ion-list class="line-input" mode="md"> 
+                <ion-item mode="md"> 
+                  <ion-icon name="lock-closed-outline"></ion-icon>
+                  <ion-input class="ion-text-left" type="password" placeholder="Password" formControlName="password"></ion-input>
+                </ion-item> 
+              </ion-list>
+              <app-loading *ngIf="isLoading"></app-loading>
+            <ion-button class="button-h" mode="ios" type="submit" [disabled]="!validationsform.valid" fill="solid" size="default" shape="round" expand="block">
+              {{strings.ST28}}
+            </ion-button>
+          </form>
+
+
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center" [ngStyle]="{'height': rowHeight}">
+      <ion-col size="12" class="ion-text-center">
+        <p class="go-to-restpass">
+          <a [routerLink]="['/forgotpass']">{{strings.ST29}}</a>
+        </p>
+        <p class="go-to-restpass">{{strings.ST4}}
+          <a [routerLink]="['/signup']"> <strong>{{strings.ST5}}</strong></a>
+        </p>        
+      </ion-col>
+    </ion-row>    
+  </ion-grid>
+</ion-content>

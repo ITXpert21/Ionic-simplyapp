@@ -1,0 +1,26 @@
+ion-content{
+    --background: #9cd1e8;
+}
+.header_name{
+    width: 150px;
+    margin: auto;
+    height: 150px;
+    background: white;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 54pt;
+    color: #9cd1e8;
+    font-weight: 500;
+}
+a {
+    text-decoration: none;
+}
+p {
+    color: white; 
+    font-size: 16pt;
+    font-weight: 500;
+    margin-top: 30px;
+    
+}
